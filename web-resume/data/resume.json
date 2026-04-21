@@ -1,0 +1,238 @@
+{
+    "personal": {
+        "name": "Angga Putra Hafidzin",
+        "title": "Data Engineer",
+        "email": "anggaputrahafidzin@gmail.com",
+        "phone": "+62 857 7526 0915",
+        "location": "Bekasi, Indonesia",
+        "website": "angga-hafidzin.com",
+        "linkedin": "linkedin.com/in/anggaph",
+        "github": "github.com/anggahafidzin08",
+        "profile_image": "assets/images/profile_picture.png",
+        "experience_years": 3
+    },
+    "summary": "Motivated data engineer with a passion for building scalable data solutions and solving complex problems. Experienced in managing Data Platforms, Data Warehousing, Data Modeling and Data Quality for both development and production environments. Seeking opportunities to contribute to impactful projects and continue growing as a data professional.",
+    "experience": [
+        {
+            "company": "RGE Digital",
+            "logo": "assets/images/companies/rge_logo.png",
+            "position": "Data Engineer",
+            "location": "Medan, Indonesia",
+            "type": "Full-time",
+            "start_date": "May 2025",
+            "end_date": "present",
+            "current": true,
+            "description": [
+                "Architected and managed end-to-end ELT pipelines for 300+ raw tables across multiple source systems (On-premise DBs, Shared Folders) into a Databricks Medallion Architecture.",
+                "Achieved 97% pipeline availability while maintaining high cost-efficiency (under $2,000/month) through optimized Databricks Autoloader and Delta Live Tables (DLT) configurations.",
+                "Engineered a modular ETL agent for multi-format ingestion (Excel, CSV, JSON) into S3, integrating AI agents to automate the transformation of unstructured reports into production-ready formats.",
+                "Developed a weather-forecasting pipeline by integrating 3rd-party APIs (Meteoblue, TWC) with internal geospatial data, enabling near real-time site and weather monitoring for the Fiber Command Center.",
+                "Led Data Integration training for 15 IT Site Engineers and 4 Data Scientists, standardizing the use of the RGE framework for decentralized, data-driven solutions."
+            ],
+            "technologies": [
+                "Python",
+                "SQL",
+                "AWS",
+                "Databricks",
+                "GitHub",
+                "QlikCloud",
+                "Metabase"
+            ]
+        },
+        {
+            "company": "PT Amman Mineral Nusa Tenggara (hired by IT Vendor)",
+            "logo": "assets/images/companies/amnt.png",
+            "position": "Data Engineer (Contract)",
+            "location": "Nusa Tenggara Barat, Indonesia",
+            "type": "Contract",
+            "start_date": "October 2024",
+            "end_date": "May 2025",
+            "current": false,
+            "description": [
+                "Optimized Supply Chain dashboards (PR, Control Tower) by migrating legacy ETL to modern ELT pipelines using Azure Data Factory and Snowflake, significantly increasing data reliability.",
+                "Designed a scalable Delta ELT pipeline to migrate 200+ on-premises tables to Snowflake, utilizing Snowpipe for automated, near-real-time file ingestion rather than scheduled tasks.",
+                "Implemented a real-time streaming pipeline using Kafka Confluent and AVEVA PI System to support operational analytics and mission-critical equipment monitoring."
+            ],
+            "technologies": [
+                "Python",
+                "SQL",
+                "Azure Data Factory",
+                "Snowflake",
+                "SAP Datasphere",
+                "Apache Kafka",
+                "PowerBI"
+            ]
+        },
+        {
+            "company": "PT Social Bella Indonesia",
+            "logo": "assets/images/companies/sociolla.png",
+            "position": "Data Analyst",
+            "location": "Jakarta, Indonesia",
+            "type": "Full-time",
+            "start_date": "October 2023",
+            "end_date": "October 2024",
+            "current": false,
+            "description": [
+                "Automated regional reporting for Indonesia and Vietnam, reducing manual processing time by 95% (from 60 minutes to 3 minutes) via Looker and Google API integrations.",
+                "Engineered a Python-based web scraper to identify emerging product and ingredient trends, providing the Customer Insights team with actionable market intelligence.",
+                "Performed tactical marketing analyses for high-traffic events (Flash Sales, Double-Date) to optimize marketing spend and conversion rates."
+            ],
+            "technologies": [
+                "Python",
+                "SQL",
+                "Google API",
+                "Looker Studio",
+                "Google Spreadsheet"
+            ]
+        },
+        {
+            "company": "PT GTech Digital Asia",
+            "logo": "assets/images/companies/gtech.png",
+            "position": "Data Analyst",
+            "location": "Jakarta, Indonesia",
+            "type": "Full-time",
+            "start_date": "January 2023",
+            "end_date": "October 2023",
+            "current": false,
+            "description": [
+                "Designed and built an Executive Dashboard to provide comprehensive insights into business performance across 4 key aspects: Sales, Product, Member Behavior and Loyalty Program performance.",
+                "Developed  an  automated  report  to  analyze  Campaign  Performance  and  Member  Purchase  Behavior,  involving  data preparation and transformation into a Tableau Dashboards.",
+                "Improve E-Commerce ‘Operational Dashboard’ from 28 graphs into 18 actionable charts with the same KPIs but more utilized Tableau feature to make it easy-to-understand the insights."
+            ],
+            "technologies": [
+                "Python",
+                "SQL",
+                "Tableau",
+                "Excel"
+            ]
+        },
+        {
+            "company": "PT Dharma Controlcable Indonesia",
+            "logo": "assets/images/companies/dci.jpg",
+            "position": "Product (R&D) Engineer",
+            "location": "Bekasi, Indonesia",
+            "type": "Full-time",
+            "start_date": "March 2021",
+            "end_date": "September 2022",
+            "current": false,
+            "description": [
+                "Designed and built the 1st and 2nd models of EV Kit prototypes as an initial product for a new business line.",
+                "Managed and installed 8 different machines to run production lines for the 1st  EV Kit Product within 3 months."
+            ],
+            "technologies": [
+                "Electronic Design",
+                "C/C++",
+                "Flutter",
+                "Python",
+                "SQL",
+                "Excel",
+                "SAP Logon"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Politeknik Manufaktur Bandung",
+            "degree": "BASc",
+            "field": "Automation Engineering",
+            "location": "Bandung, Indonesia",
+            "start_date": "September 2019",
+            "end_date": "November 2020",
+            "gpa": "3.63/4.0",
+            "achievements": [
+                "Dean's List",
+                "Relevant Coursework: Data Structures, Algorithms, Web Development"
+            ],
+            "logo": "assets/images/education/polman-bandung.png"
+        }
+    ],
+    "skills": {
+        "technical": [
+            {
+                "name": "Python",
+                "level": 90
+            },
+            {
+                "name": "SQL",
+                "level": 90
+            },
+            {
+                "name": "Data Integration",
+                "level": 85
+            },
+            {
+                "name": "PowerBI",
+                "level": 85
+            },
+            {
+                "name": "Tableau",
+                "level": 85
+            },
+            {
+                "name": "Looker Studio",
+                "level": 90
+            },
+            {
+                "name": "Git",
+                "level": 80
+            }
+        ],
+        "soft": [
+            "Problem Solving",
+            "Team Collaboration",
+            "Communication",
+            "Adaptability",
+            "Time Management",
+            "Analytical Thinking",
+            "Structured Thinking"
+        ],
+        "languages": [
+            {
+                "name": "Indonesian",
+                "proficiency": "Native"
+            },
+            {
+                "name": "English",
+                "proficiency": "Professional Working Proficiency"
+            }
+        ]
+    },
+    "certifications": [
+        {
+            "name": "Fundamental Databricks",
+            "issuer": "Databricks Academy Accreditation",
+            "date": "February 2025",
+            "credential_id": "Databricks Academy Accreditation",
+            "url": "https://credentials.databricks.com/b1887288-fd97-4bf0-9922-a762cbc0eefd"
+        },
+        {
+            "name": "AWS Cloud Practitioner",
+            "issuer": "AWS Training & Certification",
+            "date": "June 2023",
+            "credential_id": "AWS Cloud Practitioner",
+            "url": "https://www.credly.com/badges/31bc04de-c52f-4f3c-b033-29d5674d3290/linked_in?t=rwlwjr"
+        },
+        {
+            "name": "SQL Intermediate",
+            "issuer": "HackerRank",
+            "date": "October 2022",
+            "credential_id": "HackerRank SQL Intermediate Certificate",
+            "url": "https://www.hackerrank.com/certificates/71d36bdf0881"
+        },
+        {
+            "name": "SQL Basic",
+            "issuer": "HackerRank",
+            "date": "October 2022",
+            "credential_id": "HackerRank SQL Basic Certificate",
+            "url": "https://www.hackerrank.com/certificates/e9f76fa4850c"
+        }
+    ],
+    "awards": [
+        {
+            "name": "Award Name",
+            "issuer": "Organization",
+            "date": "2022-12",
+            "description": "Brief description of the award and achievement"
+        }
+    ]
+}

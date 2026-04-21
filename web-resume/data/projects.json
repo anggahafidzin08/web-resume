@@ -1,0 +1,136 @@
+{
+    "projects": [
+        {
+            "id": "project-001",
+            "slug": "pi-integration-pipeline",
+            "title": "PI Integration Pipeline",
+            "subtitle": "Real-time Sensor Data Integration from AVEVA PI to Snowflake via Kafka",
+            "category": "Data Engineering",
+            "description": "Real-time streaming ELT pipeline ingesting sensor data from AVEVA PI System into Snowflake via PI Integrator for Business Analytics, Kafka Confluent, and Snowpipe — replacing slow on-prem PI server batch queries.",
+            "long_description": "Built a streaming data pipeline to move high-volume, real-time sensor data from the on-prem AVEVA PI System into Snowflake. Using PI Integrator for Business Analytics as the producer, Kafka Confluent as the message broker, and Snowpipe as the ingestion bridge, the pipeline delivers 100+ PI tags at 1-second intervals to Snowflake with sub-second latency.",
+            "image": "assets/images/projects/pi-integration-pipeline/fig-1.png",
+            "gallery": [
+                "assets/images/projects/pi-integration-pipeline/fig-2.png",
+                "assets/images/projects/pi-integration-pipeline/fig-3.png",
+                "assets/images/projects/pi-integration-pipeline/fig-4.png",
+                "assets/images/projects/pi-integration-pipeline/fig-5.png",
+                "assets/images/projects/pi-integration-pipeline/fig-6.png",
+                "assets/images/projects/pi-integration-pipeline/fig-7.png"
+            ],
+            "technologies": [
+                "PI Integrator for Business Analytics",
+                "Kafka Confluent",
+                "Snowpipe",
+                "Snowflake",
+                "SparkSQL",
+                "PySpark"
+            ],
+            "role": "Data Engineer",
+            "team_size": 1,
+            "start_date": "2024-10",
+            "end_date": "2025-01",
+            "status": "completed",
+            "client": "AMNT (Amman Mineral Nusa Tenggara)",
+            "problem": "The on-prem AVEVA PI System stored high-volume, real-time sensor data that became increasingly slow to load due to the sheer number of rows being continuously generated. The operations team needed a way to stream this data directly into Snowflake for analytics without relying on slow batch queries against the PI server.",
+            "solution": "Built a streaming pipeline using PI Integrator for Business Analytics as the producer, Kafka Confluent as the message broker, and Snowpipe as the ingestion bridge — delivering real-time sensor data into Snowflake with sub-second latency.",
+            "challenges": [
+                {
+                    "challenge": "PI Integrator to Kafka configuration",
+                    "solution": "Set up proper topic destinations in PI Integrator, configured message schemas, and ensured Kafka producer settings matched downstream consumer expectations."
+                },
+                {
+                    "challenge": "Kafka topic design and schema handling",
+                    "solution": "Used Confluent Schema Registry to manage and version message schemas, ensuring backward compatibility as the pipeline expanded to more sensor tags."
+                },
+                {
+                    "challenge": "Snowpipe streaming configuration",
+                    "solution": "Configured the Kafka-Snowflake connector on the Confluent cluster, defined Snowflake tables with proper column mappings, and enabled Snowpipe for continuous streaming ingestion."
+                },
+                {
+                    "challenge": "Snowflake schema design for streaming data",
+                    "solution": "Designed a raw/staging/final table structure with proper Snowflake clustering keys and auto-ingest settings to optimize query performance."
+                },
+                {
+                    "challenge": "Scheduled data processing with Snowflake Tasks",
+                    "solution": "Created Snowflake Tasks with DAG-based dependencies to handle data transformation, deduplication, and aggregation on a configurable schedule."
+                }
+            ],
+            "results": [
+                "Eliminated slow PI server batch queries by streaming data directly to Snowflake",
+                "Achieved sub-second real-time data latency from PI tag to Snowflake",
+                "Enabled real-time OEE (Overall Equipment Effectiveness) dashboards for mine management",
+                "Integrated over 100 PI tags covering critical mining equipment",
+                "Zero data loss with continuous Snowpipe streaming ingestion"
+            ],
+            "links": {
+                "live": "",
+                "github": "",
+                "case_study": "content/projects/pi-integration-pipeline.md"
+            },
+            "featured": true,
+            "order": 0
+        },
+        {
+            "id": "project-002",
+            "slug": "adf-watermark-pipeline",
+            "title": "ADF Watermark Pipeline",
+            "subtitle": "Automated Incremental Data Loading from SQL Server to Snowflake via Azure Data Factory",
+            "category": "Data Engineering",
+            "description": "Azure Data Factory pipeline that automates incremental data extraction from SQL Server into Snowflake using watermark-based change tracking — reducing manual pipeline management and enabling near-real-time data sync.",
+            "long_description": "Designed and built an ADF watermark pipeline that automatically extracts and loads new records from SQL Server into Snowflake based on reference watermark values. The pipeline leverages a For Each Loop to iterate over multiple tables, uses Lookup and If Condition activities to detect new data, and copies only changed records — significantly reducing pipeline complexity and processing overhead.",
+            "image": "assets/images/projects/adf-watermark-pipeline/fig-1.png",
+            "gallery": [
+                "assets/images/projects/adf-watermark-pipeline/fig-2.png",
+                "assets/images/projects/adf-watermark-pipeline/fig-3.png",
+                "assets/images/projects/adf-watermark-pipeline/fig-4.png",
+                "assets/images/projects/adf-watermark-pipeline/fig-5.png"
+            ],
+            "technologies": [
+                "Azure Data Factory",
+                "SQL Server",
+                "Snowflake",
+                "Azure Blob Storage"
+            ],
+            "role": "Data Engineer",
+            "team_size": 1,
+            "start_date": "2024-10",
+            "end_date": "2025-01",
+            "status": "completed",
+            "client": "AMNT (Amman Mineral Nusa Tenggara)",
+            "problem": "Multiple SQL Server tables required individual ADF pipelines for incremental loading, making pipeline management complex and difficult to scale as new source tables were added.",
+            "solution": "Designed a reusable watermark-based pipeline pattern that uses a For Each Loop to iterate over all watermark reference tables, automatically detecting and loading only new records into Snowflake — consolidating dozens of pipelines into a single managed solution.",
+            "challenges": [
+                {
+                    "challenge": "Automating incremental load for multiple tables",
+                    "solution": "Built a For Each Loop-driven architecture that reads watermark reference tables and iterates through each table dynamically, applying Lookup and If Condition activities to detect new records."
+                },
+                {
+                    "challenge": "Tracking watermark values across tables",
+                    "solution": "Maintained a dedicated WTMARK_DB schema containing watermark reference tables that store the last processed value for each source table, enabling stateless incremental loads."
+                },
+                {
+                    "challenge": "Handling variable source table schemas",
+                    "solution": "Configured Copy Activity with dynamic source and sink mappings so new tables could be added to the watermark pipeline without modifying the ADF pipeline structure."
+                },
+                {
+                    "challenge": "Ensuring reliable data copy without duplicates",
+                    "solution": "Implemented conditional copy logic: the Copy Activity only executes when new records are detected via the If Condition, preventing unnecessary writes and duplicate data."
+                }
+            ],
+            "results": [
+                "Reduced dozens of individual ADF pipelines to a single reusable watermark pattern",
+                "Enabled automated incremental loads for multiple SQL Server tables into Snowflake",
+                "Eliminated manual intervention with watermark-based change tracking",
+                "Improved data freshness with near-real-time sync cadence",
+                "Easily scalable — new source tables added by updating watermark reference tables only"
+            ],
+            "links": {
+                "live": "",
+                "github": "",
+                "case_study": "content/projects/adf-watermark-pipeline.md"
+            },
+            "featured": true,
+            "order": 1
+        }
+    ]
+}
