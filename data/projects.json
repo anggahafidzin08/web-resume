@@ -306,24 +306,24 @@
                     "solution": "Built a unified data model that links transportation status with mill capacity and schedules, allowing logistics teams to anticipate bottlenecks and optimize fleet dispatch."
                 },
                 {
+                    "challenge": "Weather-aware transportation planning for wood logistics",
+                    "solution": "Integrated weather forecasting to predict optimal transfer windows — determining which wood storage locations are near and low-risk for transport based on weather conditions."
+                },
+                {
                     "challenge": "Near real-time stock level visibility across locations",
                     "solution": "Configured Databricks Delta Live Tables with incremental processing to maintain up-to-date stock levels while optimizing compute costs."
                 },
                 {
                     "challenge": "Handling multi-source data from field sensors and manual inputs",
                     "solution": "Designed a robust data ingestion layer that normalizes data from various sources, handling inconsistencies and ensuring data quality across the pipeline."
-                },
-                {
-                    "challenge": "Weather data integration for transportation planning",
-                    "solution": "Integrated weather forecasts to anticipate conditions affecting transportation, enabling proactive routing adjustments based on weather constraints."
                 }
             ],
             "results": [
                 "Enabled real-time wood stock tracking from field storage to mill sites",
+                "Predicted optimal transfer windows based on weather conditions",
+                "Identified low-risk storage locations for efficient wood transport",
                 "Reduced stock discrepancies through unified visibility across locations",
-                "Improved fleet utilization with mill schedule integration",
-                "Integrated weather data for proactive transportation planning",
-                "Provided logistics teams with unified dashboard for wood flow monitoring"
+                "Provided logistics teams with weather-aware routing recommendations"
             ],
             "links": {
                 "live": "",
