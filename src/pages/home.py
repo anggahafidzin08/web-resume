@@ -9,12 +9,13 @@ from pathlib import Path
 from src.utils.data_loader import (
     load_resume_data,
     get_featured_projects,
-    get_all_projects
+    get_all_projects,
+    PROJECT_ROOT
 )
 from src.components import (
-    render_skill_bar,
-    render_skill_tag,
-    render_project_card
+    render_skill_bar
+    # render_skill_tag,
+    # render_project_card
 )
 
 
@@ -126,7 +127,7 @@ def render_home():
         cta_cols = st.columns(2)
         
         with cta_cols[0]:
-            if st.button("📄 View Resume", use_container_width=True, type="primary"):
+            if st.button("📄 View Resume", use_container_width=True):
                 st.session_state.current_page = "Resume"
                 st.rerun()
         
@@ -155,43 +156,51 @@ def render_home():
     if featured_projects:
         for i, project in enumerate(featured_projects):
             with st.container():
-                # Create a card-like container
-                st.markdown(
-                    f"""
-                    <div style="
-                        background-color: white;
-                        padding: 20px;
-                        border-radius: 10px;
-                        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                        margin: 20px 0;
-                    ">
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                )
-                
                 # Project content
                 col_img, col_content = st.columns([1, 2])
                 
                 with col_img:
-                    # Placeholder gradient instead of image
-                    st.markdown(
-                        f"""
-                        <div style="
-                            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                            height: 150px;
-                            border-radius: 10px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            color: white;
-                            font-size: 48px;
-                        ">
-                            📁
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
+                    image = project.get("image")
+                    if image:
+                        try:
+                            img_path = str(PROJECT_ROOT / image)
+                            st.image(img_path, width=400)
+                        except Exception:
+                            st.markdown(
+                                f"""
+                                <div style="
+                                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                                    height: 150px;
+                                    border-radius: 10px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    color: white;
+                                    font-size: 48px;
+                                ">
+                                    📁
+                                </div>
+                                """,
+                                unsafe_allow_html=True
+                            )
+                    else:
+                        st.markdown(
+                            f"""
+                            <div style="
+                                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                                height: 150px;
+                                border-radius: 10px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: white;
+                                font-size: 48px;
+                            ">
+                                📁
+                            </div>
+                            """,
+                            unsafe_allow_html=True
+                        )
                 
                 with col_content:
                     st.markdown(f"#### {project.get('title', 'Project')}")
@@ -228,12 +237,11 @@ def render_home():
         st.rerun()
     
     # Call to Action Section
-    st.markdown("")
     st.markdown(
         """
         <div style="
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            padding: 40px 20px;
+            padding: 20px 20px;
             border-radius: 20px;
             text-align: center;
             color: white;
@@ -249,14 +257,16 @@ def render_home():
         """,
         unsafe_allow_html=True
     )
+
+    # st.markdown("")
     
-    contact_cols = st.columns(2)
-    with contact_cols[0]:
-        if st.button("📧 Get in Touch", use_container_width=True, type="primary"):
-            st.session_state.current_page = "Contact"
-            st.rerun()
+    # contact_cols = st.columns(2)
+    # with contact_cols[0]:
+    #     if st.button("📧 Get in Touch", use_container_width=True, type="primary"):
+    #         st.session_state.current_page = "Contact"
+    #         st.rerun()
     
-    with contact_cols[1]:
-        if st.button("📥 Download CV", use_container_width=True):
-            # Note: In production, this would link to actual PDF file
-            st.info("CV download feature coming soon!")
+    # with contact_cols[1]:
+    #     if st.button("📥 Download CV", use_container_width=True):
+    #         # Note: In production, this would link to actual PDF file
+    #         st.info("CV download feature coming soon!")

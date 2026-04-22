@@ -131,6 +131,207 @@
             },
             "featured": true,
             "order": 1
+        },
+        {
+            "id": "project-003",
+            "slug": "procurement-monitoring-dashboard",
+            "title": "Procurement Monitoring Dashboard",
+            "subtitle": "End-to-End Procurement Visibility from PR to Supplier Performance",
+            "category": "Dashboard & Analytics",
+            "description": "Built a comprehensive procurement monitoring system covering Purchase Requisition (PR), Control Tower, and Supplier Performance dashboards — enabling near real-time visibility into the entire procurement lifecycle from request to vendor delivery.",
+            "long_description": "Designed and delivered a full-stack procurement analytics solution that replaced manual, fragmented Excel reports with consolidated PowerBI dashboards. Led the complete data journey from business requirement gathering, Azure Data Factory ETL orchestration, Snowflake transformation and business logic, to executive-ready PowerBI visualizations for the procurement team.",
+            "image": "assets/images/projects/procurement-monitoring-dashboard/fig-1.png",
+            "gallery": [
+                "assets/images/projects/procurement-monitoring-dashboard/fig-1.png",
+                "assets/images/projects/procurement-monitoring-dashboard/fig-1.0.png",
+                "assets/images/projects/procurement-monitoring-dashboard/fig-1.1.png",
+                "assets/images/projects/procurement-monitoring-dashboard/fig-2.png",
+                "assets/images/projects/procurement-monitoring-dashboard/fig-3.png"
+            ],
+            "technologies": [
+                "Azure Data Factory",
+                "Snowflake",
+                "PowerBI",
+                "SQL",
+                "SAP Datasphere"
+            ],
+            "role": "Data Engineer",
+            "team_size": 1,
+            "start_date": "2024-10",
+            "end_date": "2024-12",
+            "status": "completed",
+            "client": "AMNT (Amman Mineral Nusa Tenggara)",
+            "problem": "The existing pipeline had a complex, rigid structure that made it difficult to customize or implement new changes. Redundant and unnecessary queries were impacting pipeline duration and performance, causing delays in data freshness for the procurement dashboards.",
+            "solution": "Redesigned the pipeline with a modular architecture and optimized SQL queries in Snowflake, improving pipeline performance and enabling faster iteration for new dashboard requirements. Built the end-to-end procurement monitoring solution covering PR workflows, budget tracking, and supplier scorecards served through interactive PowerBI dashboards.",
+            "challenges": [
+                {
+                    "challenge": "Pipeline scalability and customization",
+                    "solution": "Redesigned the pipeline with a modular architecture, separating concerns into discrete, reusable components that allow easier customization and faster implementation of new requirements."
+                },
+                {
+                    "challenge": "Pipeline performance optimization",
+                    "solution": "Identified and eliminated redundant and unnecessary queries through query optimization and refactoring, significantly reducing pipeline duration and improving data freshness."
+                },
+                {
+                    "challenge": "Understanding complex procurement business logic across PR → PO → GRN lifecycle",
+                    "solution": "Collaborated closely with procurement team to map approval workflows, budget allocation hierarchies, and business rules into modular SQL transformations in Snowflake."
+                },
+                {
+                    "challenge": "Budget tracking with variance alerts across cost centers",
+                    "solution": "Built budget vs actual tracking logic with real-time variance calculations, enabling procurement managers to identify over-budget situations before they escalate."
+                },
+                {
+                    "challenge": "Handling multi-level PR approval workflow tracking",
+                    "solution": "Implemented approval stage tracking with timestamp logging, allowing the Control Tower dashboard to show PR progress through each approval gate in real-time."
+                }
+            ],
+            "results": [
+                "Reduced pipeline processing time from ~50 minutes to ~20 minutes per cycle",
+                "Enabled faster iteration for new dashboard requirements with modular pipeline structure",
+                "Achieved near real-time procurement visibility reducing decision cycle time",
+                "Created standardized supplier performance scoring across Quality, Delivery, and Cost metrics",
+                "Supported PMO team in monitoring 500+ active PRs across multiple cost centers"
+            ],
+            "links": {
+                "live": "",
+                "github": "",
+                "case_study": "content/projects/procurement-monitoring-dashboard.md"
+            },
+            "featured": true,
+            "order": 2
+        },
+        {
+            "id": "project-004",
+            "slug": "river-waste-calculator",
+            "title": "River Waste Calculator",
+            "subtitle": "Excel-Based Financial Estimation Tool for Wastewater Management",
+            "category": "Tool Development",
+            "description": "Built an Excel-based financial estimation tool to help environmental professionals and waste management companies calculate, forecast, and optimize costs associated with water waste management operations.",
+            "long_description": "Developed a comprehensive Excel calculator with 150+ custom formulas covering OPEX, CAPEX, regulatory fees, and operational costs for wastewater management. The tool enables multi-scenario analysis, sensitivity analysis, and automated PDF report generation — reducing manual cost estimation from hours to minutes.",
+            "image": "assets/images/projects/calculator-tools/fig-1.png",
+            "gallery": [
+                "assets/images/projects/calculator-tools/fig-1.png",
+                "assets/images/projects/calculator-tools/fig-2.png",
+                "assets/images/projects/calculator-tools/fig-3.png",
+                "assets/images/projects/calculator-tools/fig-4.png"
+            ],
+            "technologies": [
+                "Excel VBA",
+                "Advanced Excel Formulas",
+                "Financial Modeling",
+                "Automation"
+            ],
+            "role": "Freelance Data Systems Engineer",
+            "team_size": 1,
+            "start_date": "2025-12",
+            "end_date": "2026-03",
+            "status": "completed",
+            "client": "Waste4Change",
+            "problem": "Environmental professionals and waste management companies relied on manual, error-prone spreadsheet calculations to estimate project costs for wastewater management — leading to inconsistent results, time-consuming iterations, and lack of standardized methodology across proposals.",
+            "solution": "Built a comprehensive Excel-based calculator with 150+ custom formulas that provides automated cost estimation, multi-scenario analysis, and professional PDF report generation — enabling users to generate accurate wastewater management cost estimates in minutes instead of hours.",
+            "challenges": [
+                {
+                    "challenge": "Complex financial modeling with multiple cost components",
+                    "solution": "Designed a modular worksheet structure separating OPEX, CAPEX, regulatory fees, and operational costs — allowing users to understand and modify individual components without affecting the entire model."
+                },
+                {
+                    "challenge": "Ensuring accuracy across 150+ interconnected formulas",
+                    "solution": "Implemented cross-sheet validation and error-checking mechanisms with built-in tooltips for each input field, ensuring data integrity while maintaining user-friendliness."
+                },
+                {
+                    "challenge": "Multi-scenario analysis for different waste volumes and treatment methods",
+                    "solution": "Built scenario comparison functionality allowing users to test different waste volumes, treatment methods, and operational parameters side-by-side with automatic recalculation."
+                },
+                {
+                    "challenge": "Regulatory compliance fee calculations",
+                    "solution": "Researched and integrated regulatory fee structures into the calculator, enabling users to estimate compliance costs and penalties based on local environmental regulations."
+                },
+                {
+                    "challenge": "Professional report generation for client proposals",
+                    "solution": "Developed macro-assisted automation to generate professional PDF reports from calculated data, reducing manual report preparation time significantly."
+                }
+            ],
+            "results": [
+                "Reduced manual cost estimation time from hours to minutes",
+                "Enabled multi-scenario analysis for comprehensive project planning",
+                "Created standardized methodology for wastewater cost estimation",
+                "Achieved 100% calculation accuracy through built-in validation",
+                "Provided professional PDF report generation for client proposals"
+            ],
+            "links": {
+                "live": "",
+                "github": "",
+                "case_study": "content/projects/river-waste-calculator.md"
+            },
+            "featured": true,
+            "order": 3
+        },
+        {
+            "id": "project-005",
+            "slug": "routing-app-weather-pipeline",
+            "title": "Routing App Weather Integration",
+            "subtitle": "Geospatial Data & Weather API Pipeline for Plantation Routing",
+            "category": "Data Engineering",
+            "description": "Built a weather-forecasting pipeline integrating geospatial data with 3rd-party weather APIs (Meteoblue, TWC) to support near real-time site and weather monitoring for the RGE Fiber Command Center routing application.",
+            "long_description": "Developed a Python-based pipeline on AWS that pulls geospatial data and weather forecasts from Meteoblue and The Weather Company (TWC) APIs, processing location-based weather data for 50+ plantation sites. The pipeline enables the Fiber Command Center to make data-driven decisions on field routing and replanting activities based on real-time weather conditions and 10-day forecasts.",
+            "image": "assets/images/projects/routing-app-weather-pipeline/fig-1.png",
+            "gallery": [
+                "assets/images/projects/routing-app-weather-pipeline/fig-1.png",
+                "assets/images/projects/routing-app-weather-pipeline/fig-2.png",
+                "assets/images/projects/routing-app-weather-pipeline/fig-3.png",
+                "assets/images/projects/routing-app-weather-pipeline/fig-4.png"
+            ],
+            "technologies": [
+                "Python",
+                "AWS",
+                "Databricks",
+                "Weather Forecast API",
+                "Geospatial Data Processing"
+            ],
+            "role": "Data Engineer",
+            "team_size": 1,
+            "start_date": "2025-05",
+            "end_date": "2025-10",
+            "status": "completed",
+            "client": "RGE Digital (Royal Golden Garden)",
+            "problem": "Wood stock tracking from temporary field storage to mill sites lacked real-time visibility. Logistics teams had no unified system to track wood movements, monitor stock levels, and correlate transportation data with mill schedules — leading to delays, stock discrepancies, and inefficient fleet utilization.",
+            "solution": "Built a pipeline that integrates geospatial field data with weather forecasts and wood stock movements, enabling near real-time tracking from field temporary storage to mill sites. The solution provides logistics teams with unified visibility on stock levels, transportation status, and mill receiving capacity — optimizing wood flow and reducing stock discrepancies.",
+            "challenges": [
+                {
+                    "challenge": "Tracking wood movements across multiple temporary field storage locations",
+                    "solution": "Implemented geospatial indexing for field storage locations, enabling real-time tracking of wood stock as it moves from temporary storage to mill sites."
+                },
+                {
+                    "challenge": "Correlating transportation data with mill receiving schedules",
+                    "solution": "Built a unified data model that links transportation status with mill capacity and schedules, allowing logistics teams to anticipate bottlenecks and optimize fleet dispatch."
+                },
+                {
+                    "challenge": "Near real-time stock level visibility across locations",
+                    "solution": "Configured Databricks Delta Live Tables with incremental processing to maintain up-to-date stock levels while optimizing compute costs."
+                },
+                {
+                    "challenge": "Handling multi-source data from field sensors and manual inputs",
+                    "solution": "Designed a robust data ingestion layer that normalizes data from various sources, handling inconsistencies and ensuring data quality across the pipeline."
+                },
+                {
+                    "challenge": "Weather data integration for transportation planning",
+                    "solution": "Integrated weather forecasts to anticipate conditions affecting transportation, enabling proactive routing adjustments based on weather constraints."
+                }
+            ],
+            "results": [
+                "Enabled real-time wood stock tracking from field storage to mill sites",
+                "Reduced stock discrepancies through unified visibility across locations",
+                "Improved fleet utilization with mill schedule integration",
+                "Integrated weather data for proactive transportation planning",
+                "Provided logistics teams with unified dashboard for wood flow monitoring"
+            ],
+            "links": {
+                "live": "",
+                "github": "",
+                "case_study": "content/projects/routing-app-weather-pipeline.md"
+            },
+            "featured": true,
+            "order": 4
         }
     ]
 }

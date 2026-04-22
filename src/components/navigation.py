@@ -5,6 +5,8 @@ Provides consistent navigation across all pages.
 
 import streamlit as st
 
+from src.utils.data_loader import load_resume_data
+
 
 def render_navigation(active_page: str = "Home"):
     """
@@ -13,18 +15,19 @@ def render_navigation(active_page: str = "Home"):
     Args:
         active_page: Name of the currently active page
     """
+    resume_data = load_resume_data()
+    personal = resume_data.get("personal", {})
     with st.sidebar:
         # Profile section
-        st.markdown("### 👤 Angga Putra Hafidzin")
-        st.markdown("**Data Engineer**")
+        st.markdown("### 👤 " + personal.get("name", "Angga Putra Hafidzin"))
+        st.markdown("**" + personal.get("title", "Data Engineer") + "**")
         st.divider()
         
         # Navigation links
         pages = {
             "Home": "🏠 Home",
             "Resume": "📄 Resume",
-            "Portfolio": "💼 Portfolio",
-            "Contact": "📧 Contact"
+            "Portfolio": "💼 Portfolio"
         }
         
         st.markdown("### Navigation")
@@ -52,20 +55,14 @@ def render_navigation(active_page: str = "Home"):
         # Social links
         st.markdown("### Connect")
         st.markdown(
-            "[📧 Email](mailto:anggaputrahafidzin@gmail.com)"
+            f"[📧 Email](mailto:{personal.get('email', 'anggaputrahafidzin@gmail.com')})"
         )
         st.markdown(
-            "[💼 LinkedIn](https://linkedin.com/in/anggaph)"
+            f"[💼 LinkedIn]({personal.get('linkedin', 'anggaph')})"
         )
         st.markdown(
-            "[🐙 GitHub](https://github.com/anggahafdz08)"
+            f"[🐙 GitHub]({personal.get('github', 'anggahafdz08')})"
         )
-        
-        # Contact CTA
-        st.divider()
-        if st.button("📩 Get in Touch", use_container_width=True):
-            st.session_state.current_page = "Contact"
-            st.rerun()
 
 
 def render_mobile_nav():
@@ -76,8 +73,8 @@ def render_mobile_nav():
     # Create columns for mobile nav
     cols = st.columns(4)
     
-    pages = ["Home", "Resume", "Portfolio", "Contact"]
-    icons = ["🏠", "📄", "💼", "📧"]
+    pages = ["Home", "Resume", "Portfolio"]
+    icons = ["🏠", "📄", "💼"]
     
     for i, (page, icon) in enumerate(zip(pages, icons)):
         with cols[i]:

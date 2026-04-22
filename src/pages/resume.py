@@ -66,29 +66,23 @@ def render_resume():
         st.markdown(personal.get('location', 'N/A'))
         
         st.markdown(f"**🌐 Website:**")
-        st.markdown(f"[{personal.get('website', 'N/A')}](https://{personal.get('website', '')})")
+        st.markdown(f"[{personal.get('website', 'N/A')}]({personal.get('website', '')})")
     
     # Social links
     st.markdown("")
-    social_cols = st.columns(3)
+    social_cols = st.columns(2)
     
     with social_cols[0]:
         st.markdown(f"**💼 LinkedIn:**")
         linkedin = personal.get('linkedin', '')
         if linkedin:
-            st.markdown(f"[View Profile](https://{linkedin})")
+            st.markdown(f"[View Profile]({linkedin})")
     
     with social_cols[1]:
         st.markdown(f"**🐙 GitHub:**")
         github = personal.get('github', '')
         if github:
-            st.markdown(f"[View Profile](https://{github})")
-    
-    with social_cols[2]:
-        st.markdown(f"**🌐 Portfolio:**")
-        website = personal.get('website', '')
-        if website:
-            st.markdown(f"[Visit Website](https://{website})")
+            st.markdown(f"[View Profile]({github})")
     
     st.divider()
     
@@ -202,31 +196,3 @@ def render_resume():
                 st.divider()
     else:
         st.info("No awards listed yet.")
-    
-    # Download CV Section
-    st.markdown("")
-    st.markdown(
-        """
-        <div style="
-            background-color: #EFF6FF;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid #2563EB;
-        ">
-            <h3 style="color: #2563EB; margin-bottom: 15px;">
-                📥 Download Full CV
-            </h3>
-            <p style="color: #6B7280; margin-bottom: 20px;">
-                Get a PDF version of my complete resume for offline viewing
-            </p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-    
-    download_cols = st.columns(3)
-    with download_cols[1]:
-        if st.button("📄 Download PDF", use_container_width=True, type="primary"):
-            # Note: In production, this would download the actual PDF file
-            st.info("PDF download feature coming soon! The CV file will be available in the assets/documents folder.")

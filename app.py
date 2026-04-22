@@ -8,8 +8,7 @@ from src.pages import (
     render_home,
     render_resume,
     render_portfolio,
-    render_project_detail,
-    render_contact
+    render_project_detail
 )
 from src.components import render_navigation
 
@@ -106,8 +105,6 @@ def main():
         render_portfolio()
     elif current_page == "Project Detail":
         render_project_detail()
-    elif current_page == "Contact":
-        render_contact()
     else:
         # Default to home
         render_home()
@@ -128,7 +125,7 @@ def main():
                 <a href="https://streamlit.io" target="_blank" style="color: #2563EB;">Streamlit</a>
             </p>
             <p>
-                <a href="https://github.com/yourusername/web-resume" target="_blank" style="color: #2563EB;">
+                <a href="https://github.com/anggahafidzin08/web-resume" target="_blank" style="color: #2563EB;">
                     View Source Code
                 </a>
             </p>
